@@ -1,18 +1,24 @@
-   function solution(num) {
-    let cnt = 0;
+function solution(num) {
+    var answer = 0;
+    let temp = num
+    let count = 0;
     
-    if(num === 1) return 0;
-
-
-    while(num !== 1){
-        if(cnt >= 500) return -1 
-        if(num % 2 === 0){
-            num /= 2;
-        }else{
-            num = (num * 3) + 1
+    if(temp === 1) {
+        return answer
+    }
+    while(temp !== 1 && count < 500) {
+        if(temp % 2 === 0) {
+            temp = temp / 2
+        } else {
+            temp = (temp * 3) + 1
         }
-        cnt++;
+        count++
+        answer = count
+        if(count === 500 && temp !== 1){
+            return -1
+        }
     }
     
-    return cnt;
-    }
+    
+    return answer;
+}
