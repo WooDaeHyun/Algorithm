@@ -1,20 +1,21 @@
-function solution(priorities, location) {
-    var answer = 0;
-    
-    let tmp = [...priorities];
+
+
+function solution(priorities, location){
+    let answer = 0;
+
+    let temp = [...priorities];
     let max = 0;
 
-    while(tmp.length > 0){
-        max = Math.max(...tmp);
-        if(tmp[0] !== max){
-            tmp.push(tmp.shift());
-            location > 0 ? location-- : location = tmp.length-1;
+    while(temp.length > 0){
+        max = Math.max(...temp);
+        if(temp[0] !== max){
+            temp.push(temp.shift());
+            location > 0 ? location-- : location = temp.length - 1;
         }else{
-            tmp.shift();
+            temp.shift();
             answer++;
-            if(location === 0) return answer;
-            location > 0 ? location-- : location = tmp.length-1;
+            if(location === 0)return answer;
+            location--;
         }
     }
 }
-
