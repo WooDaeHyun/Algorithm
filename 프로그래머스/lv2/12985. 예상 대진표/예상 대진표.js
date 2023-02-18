@@ -9,6 +9,3 @@ function solution(n,a,b){
 
     return answer;
 }
-
-
-
