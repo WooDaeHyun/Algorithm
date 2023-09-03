@@ -1,16 +1,20 @@
 function solution(num_list) {
     var answer = [];
-    let evenCount = 0;
-    let oddCount = 0;
+    
+    let count1 = 0;
+    let count2 = 0;
+    
     for(let x of num_list) {
         if(x % 2 === 0) {
-            evenCount++;
+            count1++;
         } else {
-            oddCount++;
+            count2++;
         }
     }
-    answer.push(evenCount);
-    answer.push(oddCount);
+    
+    answer.push(count1);
+    answer.push(count2);
+    
     
     return answer;
 }
